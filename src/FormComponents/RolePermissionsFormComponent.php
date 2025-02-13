@@ -97,14 +97,12 @@ final class RolePermissionsFormComponent extends MoonShineComponent
             }
 
             $this->elements[] = Column::make([
-                Switcher::make(__('moonshine-rbac::ui.all') . ' ' . $resource->title())->customAttributes([
+                Switcher::make($resource->title())->customAttributes([
                     'class' => 'permission_switcher_section',
                     '@change' => "document
                           .querySelectorAll('.$class')
                           .forEach((el) => {el.checked = !parseInt(event.target.value); el.dispatchEvent(new Event('change'))})",
-                ])->setValue($allSections)->hint('Toggle off/on all'),
-
-                ...$checkboxes,
+                ])->setValue($allSections)->hint('Общий переключатель ВКЛ/ВЫКЛ'),
                 Divider::make(),
             ])->columnSpan(6);
         }
