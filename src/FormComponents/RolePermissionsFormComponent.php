@@ -102,7 +102,9 @@ final class RolePermissionsFormComponent extends MoonShineComponent
                     '@change' => "document
                           .querySelectorAll('.$class')
                           .forEach((el) => {el.checked = !parseInt(event.target.value); el.dispatchEvent(new Event('change'))})",
-                ])->setValue($allSections)->hint('Общий переключатель ВКЛ/ВЫКЛ'),
+                ])->setValue($allSections)->hint('Полные права ВКЛ/ВЫКЛ для раздела'),
+
+                ...$checkboxes,
                 Divider::make(),
             ])->columnSpan(6);
         }
