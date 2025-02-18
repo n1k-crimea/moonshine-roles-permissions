@@ -128,7 +128,7 @@ final class RolePermissionsFormComponent extends MoonShineComponent
                 ),
             ])
             ->fill($this->values)
-            ->submit(__('moonshine::ui.save'));
+            ->submit(label: __('moonshine::ui.save_permissions'), attributes: ['class' => 'btn-primary']);
     }
 
     public function priorityField()
